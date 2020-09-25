@@ -4876,7 +4876,7 @@
 </div>
 
 <script>
-   const msgs = [
+    const msgs = [
     ['What i like the most about you', "You always help bro. No matter, who's the person, you like him or not."],
     ['Thankyou Bruh', "Thankyou for Rs. 600 and lot more money you gave when I needed. "],
     ['I wish you achieve everything you want', "I think you're more intereseted in Physics, Space, Satelites and stuff. You'll become the best in whatever you want."],
@@ -4893,28 +4893,33 @@
     ["Why are you gay?", 'Why are you gay?'],
     ["Happy Birthday.", "Congratulations, you made it to level 17."]
 ];
-    console.log(msgs);
-    const actual = document.querySelector('.actual h2');
-    const p = document.querySelectorAll('.particle');  
-    const q = document.querySelectorAll('.particle__inner');
 
+
+    console.log(msgs);
+    let chicken = 0;
+    const actual = document.querySelector('.actual h2');
+    const p = document.querySelectorAll('.particle');
+    const q = document.querySelectorAll('.particle__inner');
     const polygon = document.querySelector('#Capa_1 polygon');
     const path = document.querySelector('#Capa_1 path');
+
     for (let i = 0; i < p.length; i++) {
         p[i].addEventListener('click', () => {
-            let random = Math.floor(Math.random() * 4);
-            console.log(random);
-            document.querySelector('.Question').innerText = (msgs[random][0]);
-            document.querySelector('.Answer').innerText = (msgs[random][1]);
+            chicken = chicken % 15;
+            document.querySelector('.Question').innerText = (msgs[chicken][0]);
+            document.querySelector('.Answer').innerText = (msgs[chicken][1]);
+            chicken++;
         });
     }
-    for (let i = 0; i < q.length; i++) {
-        q[i].addEventListener('click', () => {
-            let random = Math.floor(Math.random() * 15);
-            document.querySelector('.Question').innerText = (msgs[random][0]);
-            document.querySelector('.Answer').innerText = (msgs[random][1]);
-        });
-    }
+    // for (let i = 0; i < q.length; i++) {
+    //     q[i].addEventListener('click', () => {
+    //         let random = Math.floor(Math.random() * 15);
+    //         document.querySelector('.Question').innerText = (msgs[random][0]);
+    //         document.querySelector('.Answer').innerText = (msgs[random][1]);
+    //
+    //     });
+    // }
+
 </script>
 <style>
     .particles {
