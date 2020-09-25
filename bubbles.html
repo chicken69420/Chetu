@@ -4876,17 +4876,28 @@
 </div>
 
 <script>
-    const msgs = [
-    ['Rabada to Sam Curran', "short of length delivery on the leg stump, Curran works it to deep square leg"],
-    ['What I like the most about you?', " back nice back foot defence is a good sight to watch"],
-    ['Rabada to Jadeja, out ', 'At the moment CSK are spending so much time packing that '],
-    ['Teri ma ki chut', 'Ma chudale'],
-    ['And however much they sprint', 'after that, the train isn\'t waiting for them.']
+   const msgs = [
+    ['What i like the most about you', "You always help bro. No matter, who's the person, you like him or not."],
+    ['Thankyou Bruh', "Thankyou for Rs. 600 and lot more money you gave when I needed. "],
+    ['I wish you achieve everything you want', "I think you're more intereseted in Physics, Space, Satelites and stuff. You'll become the best in whatever you want."],
+    ['Thankyou Bruh', 'Thankyou for teaching me rotation a day before the test. Then, I got 2nd highest in the subject.'],
+    ['Thankyou Bruh', 'Thankyou for sending me all the lectures, notes.'],
+    ["You're really cute.", "Yeah, you're cute. 🤗(NO HOMO)"],
+    ["You're an awesome friend.", "Indeed, you're."],
+    ["You're an amazing dancer.", "Thought I never saw you?"],
+    ["You're honest.'", "You're even better than a unicorn, because you're real."],
+    ["Thankyou Bruh", "You should be thanked more often. So thank you!!"],
+    ["You got a great music taste", "I hate to admit that."],
+    ['Thankyou Bruh', "Thankyou for the song 'Tera hi Rahun'. I listen to it almost every day."],
+    ['You feel home.', "I'm most comfortable and at ease near you."],
+    ["Why are you gay?", 'Why are you gay?'],
+    ["Happy Birthday.", "Congratulations, you made it to level 17."]
 ];
-
     console.log(msgs);
     const actual = document.querySelector('.actual h2');
-    const p = document.querySelectorAll('.particle');
+    const p = document.querySelectorAll('.particle');  
+    const q = document.querySelectorAll('.particle__inner');
+
     const polygon = document.querySelector('#Capa_1 polygon');
     const path = document.querySelector('#Capa_1 path');
     for (let i = 0; i < p.length; i++) {
@@ -4897,7 +4908,13 @@
             document.querySelector('.Answer').innerText = (msgs[random][1]);
         });
     }
-
+    for (let i = 0; i < q.length; i++) {
+        q[i].addEventListener('click', () => {
+            let random = Math.floor(Math.random() * 15);
+            document.querySelector('.Question').innerText = (msgs[random][0]);
+            document.querySelector('.Answer').innerText = (msgs[random][1]);
+        });
+    }
 </script>
 <style>
     .particles {
